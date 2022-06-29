@@ -1,26 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:my_calculator/components/button_container.dart';
-import 'package:my_calculator/components/digital_display.dart';
+import 'package:velocity_x/velocity_x.dart';
 
-class HomePage extends StatelessWidget {
+import '../components/button_container.dart';
+import '../components/digital_display.dart';
+
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.grey.shade800,
-        body: Column(
+    return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
+      body: SafeArea(
+        bottom: false,
+        child: Column(
           children: [
-            const SizedBox(
-              height: 24,
-            ),
             _topIconsContainer(),
-            const SizedBox(
-              height: 24,
-            ),
-            const DigitalDisplay(),
-            const ButtonsContainer()
+            const DigitalDisplay().pOnly(top: 12, bottom: 12),
+            const Spacer(),
+            const ButtonsContainer(),
           ],
         ),
       ),
