@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:velocity_x/velocity_x.dart';
 
 import '../components/button_container.dart';
-import '../components/digital_display.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -21,9 +19,8 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             _topIconsContainer(),
-            const DigitalDisplay().pOnly(top: 12, bottom: 12),
             const Spacer(),
-            const ButtonsContainer(),
+            const DisplayWithButtonsContainer(),
           ],
         ),
       ),
