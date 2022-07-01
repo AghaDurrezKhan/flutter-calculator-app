@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 class MyCustomButton extends StatelessWidget {
   MyCustomButton(
-      {required this.buttonText, this.color = Colors.teal, this.onPressed});
+      {required this.buttonText,
+      this.color = const Color(0xFF333333),
+      this.onPressed});
   final String buttonText;
   final Color color;
   final Function()? onPressed;
