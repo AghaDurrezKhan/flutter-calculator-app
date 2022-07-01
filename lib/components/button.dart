@@ -19,7 +19,7 @@ class MyCustomButton extends StatelessWidget {
         padding: EdgeInsets.zero,
         color: color,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(100),
+          borderRadius: BorderRadius.circular(24),
         ),
         onPressed: onPressed,
         child: Center(
