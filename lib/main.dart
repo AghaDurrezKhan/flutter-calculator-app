@@ -23,7 +23,7 @@ class MyCalculator extends StatelessWidget {
           onSecondary: Colors.white,
           error: Color(0xFFDC4F42),
           onError: Colors.white,
-          background: Colors.black,
+          background: Color(0xFF1A1D21),
           onBackground: Colors.white,
           surface: Color(0xFFa5a5a5),
           onSurface: Color(0xFF070707),

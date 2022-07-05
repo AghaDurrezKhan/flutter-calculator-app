@@ -5,6 +5,7 @@ class MyCustomButton extends StatelessWidget {
       {required this.buttonText,
       this.color = const Color(0xFF333333),
       this.onPressed});
+
   final String buttonText;
   final Color color;
   final Function()? onPressed;
@@ -25,7 +26,7 @@ class MyCustomButton extends StatelessWidget {
         child: Center(
             child: Text(
           buttonText,
-          style: const TextStyle(color: Colors.white, fontSize: 30),
+          style: const TextStyle(color: Colors.white, fontSize: 24),
         )),
       ),
     );

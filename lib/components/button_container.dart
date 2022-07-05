@@ -186,16 +186,15 @@ class _DisplayWithButtonsContainerState
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   MyCustomButton(
-                    buttonText: '⌫',
-                    onPressed: () {
-                      _updateExpressionByAddingValue(
+                      buttonText: '⌫',
+                      onPressed: () {
+                        setState(() {
                           displayValue = displayValue.substring(
-                              0, displayValue.length - 1),
-                          valueToShow: '');
-                      actualExpression = actualExpression.substring(
-                          0, actualExpression.length - 1);
-                    },
-                  ),
+                              0, displayValue.length - 1);
+                          actualExpression = actualExpression.substring(
+                              0, actualExpression.length - 1);
+                        });
+                      }),
                   MyCustomButton(
                     buttonText: '0',
                     onPressed: () {
