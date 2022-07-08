@@ -51,20 +51,21 @@ class _DisplayWithButtonsContainerState
         displayValue.text.xl6.align(TextAlign.end).make().p(16),
         Container(
           decoration: BoxDecoration(
-            color: Colors.grey.shade600,
+            color: Theme.of(context).colorScheme.background,
             borderRadius: const BorderRadius.only(
               topRight: Radius.circular(32),
               topLeft: Radius.circular(32),
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(32),
+            padding:
+                const EdgeInsets.only(left: 32, top: 24, right: 32, bottom: 10),
             child: Column(children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   MyCustomButton(
-                    color: Theme.of(context).colorScheme.surface,
+                    textColor: Theme.of(context).colorScheme.secondary,
                     buttonText: 'AC',
                     onPressed: () {
                       setState(() {
@@ -74,17 +75,17 @@ class _DisplayWithButtonsContainerState
                     },
                   ),
                   MyCustomButton(
-                    color: Theme.of(context).colorScheme.surface,
+                    textColor: Theme.of(context).colorScheme.secondary,
                     buttonText: '+/-',
                     onPressed: () {},
                   ),
                   MyCustomButton(
-                    color: Theme.of(context).colorScheme.surface,
+                    textColor: Theme.of(context).colorScheme.secondary,
                     buttonText: '%',
                     onPressed: () {},
                   ),
                   MyCustomButton(
-                    color: Theme.of(context).colorScheme.secondary,
+                    textColor: Theme.of(context).colorScheme.primary,
                     buttonText: '÷',
                     onPressed: () {
                       _updateExpressionByAddingValue('/', valueToShow: '÷');
@@ -114,7 +115,7 @@ class _DisplayWithButtonsContainerState
                     },
                   ),
                   MyCustomButton(
-                    color: Theme.of(context).colorScheme.secondary,
+                    textColor: Theme.of(context).colorScheme.primary,
                     buttonText: '×',
                     onPressed: () {
                       _updateExpressionByAddingValue('*', valueToShow: '×');
@@ -144,7 +145,7 @@ class _DisplayWithButtonsContainerState
                     },
                   ),
                   MyCustomButton(
-                    color: Theme.of(context).colorScheme.secondary,
+                    textColor: Theme.of(context).colorScheme.primary,
                     buttonText: '-',
                     onPressed: () {
                       _updateExpressionByAddingValue('-');
@@ -174,7 +175,7 @@ class _DisplayWithButtonsContainerState
                     },
                   ),
                   MyCustomButton(
-                    color: Theme.of(context).colorScheme.secondary,
+                    textColor: Theme.of(context).colorScheme.primary,
                     buttonText: '+',
                     onPressed: () {
                       _updateExpressionByAddingValue('+');
@@ -186,6 +187,7 @@ class _DisplayWithButtonsContainerState
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   MyCustomButton(
+                      textColor: const Color(0xFFe51a4c),
                       buttonText: '⌫',
                       onPressed: () {
                         setState(() {
@@ -208,7 +210,7 @@ class _DisplayWithButtonsContainerState
                     },
                   ),
                   MyCustomButton(
-                    color: Theme.of(context).colorScheme.secondary,
+                    buttonColor: Theme.of(context).colorScheme.primary,
                     buttonText: '=',
                     onPressed: () {
                       evaluate();
