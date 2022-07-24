@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_calculator/utils/theme_provider.dart';
+import 'package:provider/provider.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
 class ThemeSwitch extends StatefulWidget {
@@ -18,11 +20,16 @@ class _MyWidgetState extends State<ThemeSwitch> {
         totalSwitches: 2,
         inactiveFgColor: Colors.grey,
         activeFgColor: Colors.white,
-        inactiveBgColor: const Color.fromARGB(255, 35, 37, 46),
-        activeBgColor: const [Color.fromARGB(255, 35, 37, 46)],
+        inactiveBgColor: Theme.of(context).colorScheme.background,
+        activeBgColor: [Theme.of(context).colorScheme.background],
         cornerRadius: 32,
         icons: const [Icons.light_mode_outlined, Icons.dark_mode_outlined],
         iconSize: 20,
+        onToggle: ((index) {
+          ThemeProvider themeProvider =
+              Provider.of<ThemeProvider>(context, listen: false);
+          themeProvider.swapTheme();
+        }),
       ),
     );
   }
