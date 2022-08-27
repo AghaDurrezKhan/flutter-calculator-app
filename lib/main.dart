@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:my_calculator/utils/theme_provider.dart';
+import 'package:my_calculator/providers/theme_provider.dart';
 import 'package:my_calculator/pages/home.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(ChangeNotifierProvider(
+  runApp(
+    ChangeNotifierProvider(
       child: MyCalculator(),
-      create: (BuildContext context) => ThemeProvider(isDarkMode: true)));
+      create: (BuildContext context) => ThemeProvider(isDarkMode: false),
+    ),
+  );
 }
 
 class MyCalculator extends StatelessWidget {
@@ -15,11 +18,11 @@ class MyCalculator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<ThemeProvider>(
-      builder: (context, ThemeProvider, child) {
+      builder: (context, themeProvider, child) {
         return MaterialApp(
           title: 'Calculator',
           debugShowCheckedModeBanner: false,
-          theme: ThemeProvider.getTheme,
+          theme: themeProvider.getTheme,
           home: const HomePage(),
         );
       },
